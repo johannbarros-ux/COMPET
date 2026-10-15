@@ -1,1 +1,21 @@
 
+html{background-color: #fdfae9;
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    background-color: #e9b335;
+    padding: 20px 8%;
+
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+nav a {
+    color: #6a46a8;
+    text-decoration: none;
+}
