@@ -18,36 +18,56 @@ body {
     flex-direction: column;
     font-family: 'Nunito', Arial, sans-serif;
     color: #29252F;
+    background-color: #FFFCEB;
+    line-height: 1.6;
 }
 
 main {
     flex: 1;
 }
 
+h1, h2, h3 {
+    color: #35245F;
+    line-height: 1.25;
+}
+
 nav {
-    background-color: #F3B818;
+    background-color: #35245F;
+    border-bottom: 5px solid #F3B818;
     padding: 20px 8%;
     display: flex;
     align-items: center;
-    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 26px;
     text-align: center;
 }
 
 nav a {
-    color: #35245F;
+    color: #FFFFFF;
     text-decoration: none;
     font-weight: 700;
 }
 
 nav a:hover {
+    color: #F3B818;
     text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 #titulo {
     font-family: 'Nunito', Arial, sans-serif;
-    font-size: 3rem;
+    font-size: clamp(2.2rem, 5vw, 3rem);
     font-weight: 800;
-    color: #D81E5B;
+    color: #35245F;
+}
+
+a {
+    color: #35245F;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
 }
 
 button,
@@ -77,6 +97,44 @@ textarea {
     color: #29252F;
 }
 
+.botao-link {
+    display: inline-block;
+    margin: 12px 10px 12px 0;
+    padding: 12px 20px;
+    border: 2px solid #35245F;
+    border-radius: 8px;
+    background-color: #35245F;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.botao-link.secundario {
+    background-color: #EAE4F5;
+    color: #35245F;
+}
+
+.botao-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.botao-link.secundario:hover {
+    background-color: #DCD2EE;
+}
+
+footer {
+    background-color: #F3B818;
+    color: #29252F;
+    padding: 20px 8%;
+    text-align: center;
+}
+
+footer a {
+    color: #35245F;
+    font-weight: 700;
+}
+
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -86,6 +144,13 @@ textarea:focus-visible {
     outline-offset: 3px;
 }
 
-footer {
-    background-color: #F3B818;
+@media (max-width: 600px) {
+    nav {
+        padding: 16px 5%;
+        gap: 10px 16px;
+    }
+
+    footer {
+        padding: 18px 5%;
+    }
 }
