@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Cadastre-se na COMPET e participe da adoção responsável.">
+<title>Cadastro | COMPET</title><link rel="stylesheet" href="../css/style.css">
+<style>
+.pagina{width:min(920px,92%);margin:42px auto 56px}.intro{text-align:center;margin-bottom:28px}.intro h1{color:#D81E5B;font-size:clamp(2rem,5vw,2.8rem)}.intro p{line-height:1.6}.formulario{background:#fff;border:1px solid #eee3c5;border-radius:16px;padding:clamp(20px,4vw,36px);box-shadow:0 8px 24px #32230a14}.campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.campo{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}.largo{grid-column:1/-1}.campo label{font-weight:700}.campo input,.campo select{width:100%;padding:12px;border:1px solid #cfc8d8;border-radius:8px;background:#fffdf8;font:inherit}.aviso{padding:13px;background:#fff7d9;border-radius:8px;margin:15px 0;line-height:1.5}.botao{border:0;border-radius:9px;padding:13px 20px;font:inherit;font-weight:700;cursor:pointer}.principal{background:#705CAF;color:white}.secundario{background:#f2edf9;color:#57448e}@media(max-width:620px){.campos{grid-template-columns:1fr}.largo{grid-column:auto}}
+</style></head>
+<body>
+<header><nav aria-label="Navegação principal"><a href="../index.html">Início</a><a href="sobre o projeto.html">Sobre o projeto</a><a href="cadastro.html" aria-current="page">Cadastro</a><a href="adocao.html">Adoção de Animais</a><a href="doacao.html">Doação de Animais</a><a href="cadastro animal.html">Cadastro de Animais</a></nav></header>
+<main class="pagina"><a href="../index.html">← Voltar para a página inicial</a><section class="intro"><h1>Crie sua conta</h1><p>Faça seu cadastro na COMPET para participar da comunidade e promover a adoção responsável.</p></section>
+<form class="formulario" id="formCadastro"><h2>Seus dados</h2><p>Os campos marcados com * são obrigatórios.</p><div class="campos">
+<div class="campo"><label for="nome">Nome completo *</label><input id="nome" name="nome" autocomplete="name" required maxlength="120" placeholder="Digite seu nome completo"></div>
+<div class="campo"><label for="nascimento">Data de nascimento *</label><input type="date" id="nascimento" name="nascimento" required></div>
+<div class="campo"><label for="email">E-mail *</label><input type="email" id="email" name="email" required maxlength="160" placeholder="voce@exemplo.com"></div>
+<div class="campo"><label for="telefone">Telefone / WhatsApp *</label><input type="tel" id="telefone" name="telefone" required maxlength="20" placeholder="(83) 99999-9999"></div>
+<div class="campo"><label for="senha">Crie uma senha *</label><input type="password" id="senha" name="senha" required minlength="8" autocomplete="new-password" placeholder="Pelo menos 8 caracteres"></div>
+<div class="campo"><label for="confirmar">Confirme sua senha *</label><input type="password" id="confirmar" name="confirmar" required minlength="8" autocomplete="new-password"></div>
+<div class="campo"><label for="cidade">Cidade *</label><input id="cidade" name="cidade" required maxlength="100"></div>
+<div class="campo"><label for="estado">Estado *</label><select id="estado" name="estado" required><option value="">Selecione</option><option value="PB">Paraíba</option><option value="PE">Pernambuco</option><option value="RN">Rio Grande do Norte</option><option value="CE">Ceará</option><option value="AL">Alagoas</option><option value="BA">Bahia</option><option value="outro">Outro</option></select></div>
+<div class="campo largo"><label for="objetivo">Como pretende participar da COMPET?</label><select id="objetivo" name="objetivo"><option value="">Selecione</option><option value="adotar">Quero adotar um animal</option><option value="doar">Quero cadastrar um animal para adoção</option><option value="ambos">Quero adotar e ajudar com doações</option><option value="voluntario">Quero apoiar a causa animal</option></select></div></div>
+<div class="aviso">Esta é a interface inicial. O cadastro ainda precisa ser conectado ao back-end para enviar e armazenar os dados com segurança.</div><button class="botao principal" type="submit">Criar cadastro</button> <button class="botao secundario" type="reset">Limpar formulário</button></form></main>
+<footer><p>Site criado por Kaiky, Johann e Samara · COMPET</p><a href="../index.html">Página inicial</a></footer>
+<script>document.getElementById("formCadastro").addEventListener("submit",function(e){e.preventDefault();if(document.getElementById("senha").value!==document.getElementById("confirmar").value){alert("As senhas não são iguais.");return;}alert("A interface está funcionando, mas o envio precisa ser conectado ao back-end.");});</script>
+</body></html>
