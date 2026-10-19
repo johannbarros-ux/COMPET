@@ -218,3 +218,7 @@ textarea:focus-visible {
 .footer-bottom{margin-top:22px;padding-top:15px;border-top:1px solid rgba(255,252,235,.3);font-size:.86rem;color:#eee7fb}
 @media(max-width:850px){.site-nav{align-items:flex-start;flex-direction:column}.site-nav nav{justify-content:flex-start}}
 @media(max-width:600px){.site-nav{padding:15px 5%}.site-nav nav{gap:8px 14px}.site-nav nav a{font-size:.88rem}.footer-inner{flex-direction:column}.site-footer{margin-top:55px}}
+
+.site-footer nav.footer-links{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end;gap:12px 18px;padding:0;background:transparent;border:0;text-align:left}
+.site-footer nav.footer-links a{color:#FFFCEB}
+@media(max-width:850px){.site-footer nav.footer-links{justify-content:flex-start}}
