@@ -1,16 +1,353 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Compartilhe informações para ajudar um animal a encontrar um lar responsável."><meta name="theme-color" content="#FFFCEB"><title>Cadastro de Animais | COMPET</title><link rel="stylesheet" href="../css/style.css"></head><body><a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a><header class="site-nav"><a class="marca" href="../index.html" aria-label="COMPET — página inicial"><span class="marca-simbolo" aria-hidden="true">✳</span><span>COMPET</span></a><nav aria-label="Navegação principal"><a href="../index.html">Início</a><a href="sobre o projeto.html">O projeto</a><a href="adocao.html">Adoção</a><a href="doacao.html">Doação</a><a href="cadastro animal.html" aria-current="page">Cadastrar animal</a><a href="cadastro.html">Cadastro</a><a href="fundo.html">Apoie a causa</a></nav></header><main id="conteudo-principal"><section class="sp-hero"><div class="sp-wrap sp-hero-inner"><span class="sp-kicker">DIVULGUE / ADOÇÃO RESPONSÁVEL</span><h1>Toda história merece <em>um lar.</em></h1><p>Compartilhe informações para ajudar um animal a encontrar um lar responsável.</p><a class="sp-back" href="../index.html">← Voltar para a página inicial</a></div></section><div class="sp-wrap sp-form-layout"><aside class="sp-note"><span class="sp-num">02</span><h2>Ajude uma história a mudar.</h2><p>Preencha as informações com honestidade. O envio, o armazenamento e o upload de fotos ainda dependem de integração com um back-end.</p><span class="sp-stamp">CUIDADO EM COMUNIDADE</span></aside><form class="formulario sp-form" id="formAnimal"><h2>Informações do animal</h2><p>Os campos marcados com * são obrigatórios.</p><div class="campos">
-<div class="campo"><label for="nome-animal">Nome do animal *</label><input id="nome-animal" name="nome_animal" required maxlength="80" placeholder="Ex.: Bolinha"></div>
-<div class="campo"><label for="especie">Espécie *</label><select id="especie" name="especie" required><option value="">Selecione</option><option value="cachorro">Cachorro</option><option value="gato">Gato</option><option value="outro">Outro</option></select></div>
-<div class="campo"><label for="sexo">Sexo *</label><select id="sexo" name="sexo" required><option value="">Selecione</option><option value="macho">Macho</option><option value="femea">Fêmea</option><option value="desconhecido">Não sei informar</option></select></div>
-<div class="campo"><label for="idade">Idade aproximada *</label><input id="idade" name="idade" required maxlength="50" placeholder="Ex.: 3 meses ou 2 anos"></div>
-<div class="campo"><label for="porte">Porte *</label><select id="porte" name="porte" required><option value="">Selecione</option><option value="pequeno">Pequeno</option><option value="medio">Médio</option><option value="grande">Grande</option><option value="nao-sei">Não sei informar</option></select></div>
-<div class="campo"><label for="castrado">É castrado? *</label><select id="castrado" name="castrado" required><option value="">Selecione</option><option value="sim">Sim</option><option value="nao">Não</option><option value="nao-sei">Não sei informar</option></select></div>
-<div class="campo"><label for="vacinado">Vacinação *</label><select id="vacinado" name="vacinado" required><option value="">Selecione</option><option value="em-dia">Em dia</option><option value="incompleta">Incompleta</option><option value="nao-vacinado">Não vacinado</option><option value="nao-sei">Não sei informar</option></select></div>
-<div class="campo"><label for="temperamento">Temperamento</label><select id="temperamento" name="temperamento"><option value="">Selecione</option><option value="calmo">Calmo</option><option value="brincalhao">Brincalhão</option><option value="timido">Tímido</option><option value="sociavel">Sociável com outros animais</option><option value="outro">Outro / não sei informar</option></select></div>
-<div class="campo largo"><label for="foto">Foto do animal</label><input type="file" id="foto" name="foto" accept="image/*"><small>A seleção da foto aparece aqui; o envio depende do back-end.</small></div>
-<div class="campo largo"><label for="descricao">Conte um pouco sobre o animal *</label><textarea id="descricao" name="descricao" rows="5" required maxlength="1200" placeholder="Personalidade, saúde, rotina e outras informações importantes."></textarea></div>
-<div class="campo"><label for="responsavel">Nome do responsável *</label><input id="responsavel" name="responsavel" required maxlength="120"></div>
-<div class="campo"><label for="contato">Telefone / WhatsApp *</label><input type="tel" id="contato" name="contato" required maxlength="20" placeholder="(83) 99999-9999"></div>
-<div class="campo"><label for="cidade">Cidade *</label><input id="cidade" name="cidade" required maxlength="100"></div>
-<div class="campo"><label for="estado">Estado *</label><select id="estado" name="estado" required><option value="">Selecione</option><option value="PB">Paraíba</option><option value="PE">Pernambuco</option><option value="RN">Rio Grande do Norte</option><option value="CE">Ceará</option><option value="AL">Alagoas</option><option value="BA">Bahia</option><option value="outro">Outro</option></select></div></div>
-<p id="mensagemAnimal" class="mensagem-formulario" role="status" aria-live="polite" aria-atomic="true"></p><div class="aviso">Cadastre apenas informações verdadeiras. O formulário ainda não envia os dados para um banco de dados.</div><button class="botao principal" type="submit">Cadastrar animal</button> <button class="botao secundario" type="reset">Limpar formulário</button></form></div></main><footer class="site-footer"><div class="sp-wrap"><div class="footer-inner"><div class="footer-brand"><a class="marca" href="../index.html"><span class="marca-simbolo" aria-hidden="true">✳</span><span>COMPET</span></a><p>Um projeto acadêmico que promove a adoção responsável e o cuidado com os animais.</p></div><nav class="footer-links" aria-label="Links do rodapé"><a href="sobre o projeto.html">Sobre o projeto</a><a href="adocao.html">Adoção</a><a href="cadastro.html">Cadastro</a><a href="contato.html">Contato</a><a href="fundo.html">Apoie a causa</a></nav></div><div class="footer-bottom">Site criado por Kaiky, Johann e Samara.</div></div></footer><script>document.getElementById("formAnimal").addEventListener("submit",function(e){e.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}const mensagem=document.getElementById("mensagemAnimal");mensagem.className="mensagem-formulario mensagem-sucesso";mensagem.setAttribute("role","status");mensagem.textContent="Os campos foram validados. O cadastro ainda não é enviado nem salvo porque falta a integração com o back-end.";});</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Compartilhe informações para ajudar um animal a encontrar um lar responsável.">
+        <meta name="theme-color" content="#FFFCEB">
+        <title>
+            Cadastro de Animais | COMPET
+        </title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <a class="skip-link" href="#conteudo-principal">
+            Pular para o conteúdo principal
+        </a>
+        <header class="site-nav">
+            <a class="marca" href="../index.html" aria-label="COMPET — página inicial">
+                <span class="marca-simbolo" aria-hidden="true">
+                    ✳
+                </span>
+                <span>
+                    COMPET
+                </span>
+            </a>
+            <nav aria-label="Navegação principal">
+                <a href="../index.html">
+                    Início
+                </a>
+                <a href="sobre o projeto.html">
+                    O projeto
+                </a>
+                <a href="adocao.html">
+                    Adoção
+                </a>
+                <a href="doacao.html">
+                    Doação
+                </a>
+                <a href="cadastro animal.html" aria-current="page">
+                    Cadastrar animal
+                </a>
+                <a href="cadastro.html">
+                    Cadastro
+                </a>
+                <a href="fundo.html">
+                    Apoie a causa
+                </a>
+            </nav>
+        </header>
+        <main id="conteudo-principal">
+            <section class="sp-hero">
+                <div class="sp-wrap sp-hero-inner">
+                    <span class="sp-kicker">
+                        DIVULGUE / ADOÇÃO RESPONSÁVEL
+                    </span>
+                    <h1>
+                        Toda história merece
+                        <em>
+                            um lar.
+                        </em>
+                    </h1>
+                    <p>
+                        Compartilhe informações para ajudar um animal a encontrar um lar responsável.
+                    </p>
+                    <a class="sp-back" href="../index.html">
+                        ← Voltar para a página inicial
+                    </a>
+                </div>
+            </section>
+            <div class="sp-wrap sp-form-layout">
+                <aside class="sp-note">
+                    <span class="sp-num">
+                        02
+                    </span>
+                    <h2>
+                        Ajude uma história a mudar.
+                    </h2>
+                    <p>
+                        Preencha as informações com honestidade. O envio, o armazenamento e o upload de fotos ainda dependem de integração com um back-end.
+                    </p>
+                    <span class="sp-stamp">
+                        CUIDADO EM COMUNIDADE
+                    </span>
+                </aside>
+                <form class="formulario sp-form" id="formAnimal">
+                    <h2>
+                        Informações do animal
+                    </h2>
+                    <p>
+                        Os campos marcados com * são obrigatórios.
+                    </p>
+                    <div class="campos">
+                        <div class="campo">
+                            <label for="nome-animal">
+                                Nome do animal *
+                            </label>
+                            <input id="nome-animal" name="nome_animal" required maxlength="80" placeholder="Ex.: Bolinha">
+                        </div>
+                        <div class="campo">
+                            <label for="especie">
+                                Espécie *
+                            </label>
+                            <select id="especie" name="especie" required>
+                                <option value="">
+                                    Selecione
+                                </option>
+                                <option value="cachorro">
+                                    Cachorro
+                                </option>
+                                <option value="gato">
+                                    Gato
+                                </option>
+                                <option value="outro">
+                                    Outro
+                                </option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="sexo">
+                                Sexo *
+                            </label>
+                            <select id="sexo" name="sexo" required>
+                                <option value="">
+                                    Selecione
+                                </option>
+                                <option value="macho">
+                                    Macho
+                                </option>
+                                <option value="femea">
+                                    Fêmea
+                                </option>
+                                <option value="desconhecido">
+                                    Não sei informar
+                                </option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="idade">
+                                Idade aproximada *
+                            </label>
+                            <input id="idade" name="idade" required maxlength="50" placeholder="Ex.: 3 meses ou 2 anos">
+                        </div>
+                        <div class="campo">
+                            <label for="porte">
+                                Porte *
+                            </label>
+                            <select id="porte" name="porte" required>
+                                <option value="">
+                                    Selecione
+                                </option>
+                                <option value="pequeno">
+                                    Pequeno
+                                </option>
+                                <option value="medio">
+                                    Médio
+                                </option>
+                                <option value="grande">
+                                    Grande
+                                </option>
+                                <option value="nao-sei">
+                                    Não sei informar
+                                </option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="castrado">
+                                É castrado? *
+                            </label>
+                            <select id="castrado" name="castrado" required>
+                                <option value="">
+                                    Selecione
+                                </option>
+                                <option value="sim">
+                                    Sim
+                                </option>
+                                <option value="nao">
+                                    Não
+                                </option>
+                                <option value="nao-sei">
+                                    Não sei informar
+                                </option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="vacinado">
+                                Vacinação *
+                            </label>
+                            <select id="vacinado" name="vacinado" required>
+                                <option value="">
+                                    Selecione
+                                </option>
+                                <option value="em-dia">
+                                    Em dia
+                                </option>
+                                <option value="incompleta">
+                                    Incompleta
+                                </option>
+                                <option value="nao-vacinado">
+                                    Não vacinado
+                                </option>
+                                <option value="nao-sei">
+                                    Não sei informar
+                                </option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="temperamento">
+                                Temperamento
+                            </label>
+                            <select id="temperamento" name="temperamento">
+                                <option value="">
+                                    Selecione
+                                </option>
+                                <option value="calmo">
+                                    Calmo
+                                </option>
+                                <option value="brincalhao">
+                                    Brincalhão
+                                </option>
+                                <option value="timido">
+                                    Tímido
+                                </option>
+                                <option value="sociavel">
+                                    Sociável com outros animais
+                                </option>
+                                <option value="outro">
+                                    Outro / não sei informar
+                                </option>
+                            </select>
+                        </div>
+                        <div class="campo largo">
+                            <label for="foto">
+                                Foto do animal
+                            </label>
+                            <input type="file" id="foto" name="foto" accept="image/*">
+                            <small>
+                                A seleção da foto aparece aqui; o envio depende do back-end.
+                            </small>
+                        </div>
+                        <div class="campo largo">
+                            <label for="descricao">
+                                Conte um pouco sobre o animal *
+                            </label>
+                            <textarea id="descricao" name="descricao" rows="5" required maxlength="1200" placeholder="Personalidade, saúde, rotina e outras informações importantes.">
+                            </textarea>
+                        </div>
+                        <div class="campo">
+                            <label for="responsavel">
+                                Nome do responsável *
+                            </label>
+                            <input id="responsavel" name="responsavel" required maxlength="120">
+                        </div>
+                        <div class="campo">
+                            <label for="contato">
+                                Telefone / WhatsApp *
+                            </label>
+                            <input type="tel" id="contato" name="contato" required maxlength="20" placeholder="(83) 99999-9999">
+                        </div>
+                        <div class="campo">
+                            <label for="cidade">
+                                Cidade *
+                            </label>
+                            <input id="cidade" name="cidade" required maxlength="100">
+                        </div>
+                        <div class="campo">
+                            <label for="estado">
+                                Estado *
+                            </label>
+                            <select id="estado" name="estado" required>
+                                <option value="">
+                                    Selecione
+                                </option>
+                                <option value="PB">
+                                    Paraíba
+                                </option>
+                                <option value="PE">
+                                    Pernambuco
+                                </option>
+                                <option value="RN">
+                                    Rio Grande do Norte
+                                </option>
+                                <option value="CE">
+                                    Ceará
+                                </option>
+                                <option value="AL">
+                                    Alagoas
+                                </option>
+                                <option value="BA">
+                                    Bahia
+                                </option>
+                                <option value="outro">
+                                    Outro
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <p id="mensagemAnimal" class="mensagem-formulario" role="status" aria-live="polite" aria-atomic="true">
+                    </p>
+                    <div class="aviso">
+                        Cadastre apenas informações verdadeiras. O formulário ainda não envia os dados para um banco de dados.
+                    </div>
+                    <button class="botao principal" type="submit">
+                        Cadastrar animal
+                    </button>
+                    <button class="botao secundario" type="reset">
+                        Limpar formulário
+                    </button>
+                </form>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <div class="sp-wrap">
+                <div class="footer-inner">
+                    <div class="footer-brand">
+                        <a class="marca" href="../index.html">
+                            <span class="marca-simbolo" aria-hidden="true">
+                                ✳
+                            </span>
+                            <span>
+                                COMPET
+                            </span>
+                        </a>
+                        <p>
+                            Um projeto acadêmico que promove a adoção responsável e o cuidado com os animais.
+                        </p>
+                    </div>
+                    <nav class="footer-links" aria-label="Links do rodapé">
+                        <a href="sobre o projeto.html">
+                            Sobre o projeto
+                        </a>
+                        <a href="adocao.html">
+                            Adoção
+                        </a>
+                        <a href="cadastro.html">
+                            Cadastro
+                        </a>
+                        <a href="contato.html">
+                            Contato
+                        </a>
+                        <a href="fundo.html">
+                            Apoie a causa
+                        </a>
+                    </nav>
+                </div>
+                <div class="footer-bottom">
+                    Site criado por Kaiky, Johann e Samara.
+                </div>
+            </div>
+        </footer>
+        <script src="../js/formularios.js">
+        </script>
+    </body>
+</html>
