@@ -5,10 +5,20 @@
 <title>Cadastro de Animais | COMPET</title><link rel="stylesheet" href="../css/style.css">
 <style>
 .pagina{width:min(960px,92%);margin:42px auto 56px}.intro{text-align:center;margin-bottom:28px}.intro h1{color:#D81E5B;font-size:clamp(2rem,5vw,2.8rem)}.intro p{line-height:1.6}.formulario{background:#fff;border:1px solid #eee3c5;border-radius:16px;padding:clamp(20px,4vw,36px);box-shadow:0 8px 24px #32230a14}.campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.campo{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}.largo{grid-column:1/-1}.campo label{font-weight:700}.campo input,.campo select,.campo textarea{width:100%;padding:12px;border:1px solid #cfc8d8;border-radius:8px;background:#fffdf8;font:inherit}.aviso{padding:13px;background:#fff7d9;border-radius:8px;margin:15px 0;line-height:1.5}.botao{border:0;border-radius:9px;padding:13px 20px;font:inherit;font-weight:700;cursor:pointer}.principal{background:#705CAF;color:white}.secundario{background:#f2edf9;color:#57448e}@media(max-width:620px){.campos{grid-template-columns:1fr}.largo{grid-column:auto}}
+
+/* Acessibilidade: foco visível e link para saltar a navegação */
+.skip-link{position:absolute;top:8px;left:8px;z-index:1000;padding:12px 16px;background:#fff;color:#2d2052;border:3px solid #2d2052;border-radius:6px;transform:translateY(-160%);}
+.skip-link:focus{transform:translateY(0);}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2d2052;outline-offset:3px;}
+.campo input:focus-visible,.campo select:focus-visible,.campo textarea:focus-visible{border-color:#2d2052;}
+.mensagem-formulario{margin:16px 0;padding:12px;border-radius:8px;line-height:1.5;}
+.mensagem-formulario:empty{display:none;}
+.mensagem-erro{background:#fff0f0;color:#7a1717;border:1px solid #a52a2a;}
+.mensagem-sucesso{background:#eef9ef;color:#174d22;border:1px solid #28753a;}
 </style></head>
-<body>
+<body><a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
 <header><nav aria-label="Navegação principal"><a href="../index.html">Início</a><a href="sobre o projeto.html">Sobre o projeto</a><a href="cadastro.html">Cadastro</a><a href="adocao.html">Adoção de Animais</a><a href="doacao.html">Doação de Animais</a><a href="cadastro animal.html" aria-current="page">Cadastro de Animais</a></nav></header>
-<main class="pagina"><a href="../index.html">← Voltar para a página inicial</a><section class="intro"><h1>Cadastro de Animais</h1><p>Compartilhe informações para ajudar o animal a encontrar um lar responsável.</p></section>
+<main class="pagina" id="conteudo-principal"><a href="../index.html">← Voltar para a página inicial</a><section class="intro"><h1>Cadastro de Animais</h1><p>Compartilhe informações para ajudar o animal a encontrar um lar responsável.</p></section>
 <form class="formulario" id="formAnimal"><h2>Informações do animal</h2><p>Os campos marcados com * são obrigatórios.</p><div class="campos">
 <div class="campo"><label for="nome-animal">Nome do animal *</label><input id="nome-animal" name="nome_animal" required maxlength="80" placeholder="Ex.: Bolinha"></div>
 <div class="campo"><label for="especie">Espécie *</label><select id="especie" name="especie" required><option value="">Selecione</option><option value="cachorro">Cachorro</option><option value="gato">Gato</option><option value="outro">Outro</option></select></div>
@@ -24,7 +34,7 @@
 <div class="campo"><label for="contato">Telefone / WhatsApp *</label><input type="tel" id="contato" name="contato" required maxlength="20" placeholder="(83) 99999-9999"></div>
 <div class="campo"><label for="cidade">Cidade *</label><input id="cidade" name="cidade" required maxlength="100"></div>
 <div class="campo"><label for="estado">Estado *</label><select id="estado" name="estado" required><option value="">Selecione</option><option value="PB">Paraíba</option><option value="PE">Pernambuco</option><option value="RN">Rio Grande do Norte</option><option value="CE">Ceará</option><option value="AL">Alagoas</option><option value="BA">Bahia</option><option value="outro">Outro</option></select></div></div>
-<div class="aviso">Cadastre apenas informações verdadeiras. O formulário ainda não envia os dados para um banco de dados.</div><button class="botao principal" type="submit">Cadastrar animal</button> <button class="botao secundario" type="reset">Limpar formulário</button></form></main>
+<p id="mensagemAnimal" class="mensagem-formulario" role="status" aria-live="polite" aria-atomic="true"></p><div class="aviso">Cadastre apenas informações verdadeiras. O formulário ainda não envia os dados para um banco de dados.</div><button class="botao principal" type="submit">Cadastrar animal</button> <button class="botao secundario" type="reset">Limpar formulário</button></form></main>
 <footer><p>Site criado por Kaiky, Johann e Samara · COMPET</p><a href="../index.html">Página inicial</a></footer>
-<script>document.getElementById("formAnimal").addEventListener("submit",function(e){e.preventDefault();alert("O formulário foi preenchido, mas o envio ainda precisa ser conectado ao back-end.");});</script>
+<script>document.getElementById("formAnimal").addEventListener("submit",function(e){e.preventDefault();if(!this.checkValidity()){this.reportValidity();return;}const mensagem=document.getElementById("mensagemAnimal");mensagem.className="mensagem-formulario mensagem-sucesso";mensagem.setAttribute("role","status");mensagem.textContent="Os campos foram validados. O cadastro ainda não é enviado nem salvo porque falta a integração com o back-end.";});</script>
 </body></html>
