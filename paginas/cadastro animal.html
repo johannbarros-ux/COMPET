@@ -17,6 +17,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .mensagem-formulario:empty{display:none;}
 .mensagem-erro{background:#fff0f0;color:#7a1717;border:1px solid #a52a2a;}
 .mensagem-sucesso{background:#eef9ef;color:#174d22;border:1px solid #28753a;}
+
+/* Identidade visual consistente nestas páginas */
+header nav{background:#35245F!important;border-bottom:5px solid #F3B818;padding:20px 8%;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px 26px;text-align:center}
+header nav a{color:#FFFFFF!important;text-decoration:none;font-weight:800;transition:color .2s ease}
+header nav a:hover{color:#F3B818!important;text-decoration:underline;text-underline-offset:4px}
+header nav a[aria-current="page"]{text-decoration:underline;text-decoration-color:#F3B818;text-decoration-thickness:2px;text-underline-offset:6px}
+.intro h1{color:#35245F!important;font-weight:800;letter-spacing:-.03em}
+.intro p{max-width:680px;margin:10px auto 0;color:#514b59}
+.formulario{border-top:5px solid #F3B818}
+.formulario h2{margin-bottom:8px;color:#35245F}
+.campo label{color:#35245F}
+.campo input:focus,.campo select:focus,.campo textarea:focus{outline:3px solid #EAE4F5;border-color:#35245F}
+.botao{transition:background-color .2s ease,transform .2s ease}
+.botao:hover{transform:translateY(-1px)}
+.botao.principal:hover{background:#281A49;border-color:#281A49}
+.botao.secundario:hover{background:#DCD2EE;border-color:#35245F}
+@media(max-width:620px){header nav{padding:16px 5%;gap:10px 16px}}
+
 </style></head>
 <body><a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
 <header><nav aria-label="Navegação principal"><a href="../index.html">Início</a><a href="sobre o projeto.html">Sobre o projeto</a><a href="cadastro.html">Cadastro</a><a href="adocao.html">Adoção de Animais</a><a href="doacao.html">Doação de Animais</a><a href="cadastro animal.html" aria-current="page">Cadastro de Animais</a></nav></header>
