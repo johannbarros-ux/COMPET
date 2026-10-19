@@ -3,84 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Johann, Samara, Kaiky">
-    <meta name="description" content="Site para adoção e doação de animais responsável">
-
-    <link rel="icon" href="icone_compet.png"> <!-- Preciso colocar o icone, falar com naty  -->
+    <meta name="author" content="Johann, Samara e Kaiky">
+    <meta name="description" content="COMPET: conheça caminhos para adoção responsável, cadastro de animais e apoio à causa animal.">
+    <meta name="theme-color" content="#35245F">
+    <title>COMPET | Espalhe amor, transforme vidas</title>
+    <link rel="icon" href="icone_compet.png">
     <link rel="stylesheet" href="css/style.css">
-
-     <!-- Previa ao compartilhar o link (FALTA FZ AINDA)-->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Meu Site">
-    <meta property="og:description" content="Site para adoção e doação de animais responsável">
-    <meta property="og:url" content="u-repositorio/">
-    <meta property="og:image" content="">
-    <meta property="og:locale" content="pt_BR">
-
-
-    <title>COMPET</title>
+    <style>
+        .skip-link{position:absolute;left:12px;top:10px;z-index:10;transform:translateY(-160%);padding:10px 14px;background:#fff;color:#35245F;border:2px solid #35245F;border-radius:8px}
+        .skip-link:focus{transform:translateY(0)}
+        .home{width:min(1120px,90%);margin:0 auto}
+        .hero{padding:clamp(44px,8vw,90px) 0 58px}
+        .hero-box{position:relative;overflow:hidden;padding:clamp(28px,6vw,64px);border-radius:28px;background:linear-gradient(135deg,#35245F 0%,#49347A 100%);color:#fff;box-shadow:0 16px 36px #35245f24}
+        .hero-box:after{content:"";position:absolute;width:240px;height:240px;border:32px solid #F3B818;border-radius:50%;right:-70px;top:-100px;opacity:.9}
+        .eyebrow{display:inline-block;margin-bottom:16px;padding:7px 13px;border-radius:999px;background:#F3B818;color:#29252F;font-size:.85rem;font-weight:800;letter-spacing:.04em}
+        .hero h1{max-width:720px;margin-bottom:18px;color:#fff;font-size:clamp(2.5rem,7vw,4.8rem);line-height:1.05;letter-spacing:-.04em}
+        .hero h1 span{color:#F3B818}
+        .hero p{max-width:650px;color:#F7F3FF;font-size:clamp(1.05rem,2vw,1.2rem);line-height:1.8}
+        .acoes{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+        .acoes .botao-link{margin:0;text-align:center}
+        .acoes .botao-link.secundario{background:#F3B818;border-color:#F3B818;color:#29252F}
+        .acoes .botao-link.secundario:hover{background:#ffcf45}
+        .nota-hero{margin-top:18px!important;font-size:.92rem!important;color:#e8e0f7!important}
+        .secao{padding:34px 0 48px}
+        .cabecalho-secao{max-width:720px;margin-bottom:24px}
+        .cabecalho-secao .mini{color:#6d5b91;text-transform:uppercase;font-size:.82rem;font-weight:800;letter-spacing:.12em}
+        .cabecalho-secao h2{margin:8px 0 12px;font-size:clamp(1.8rem,4vw,2.5rem)}
+        .cabecalho-secao p{line-height:1.8}
+        .grade{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+        .cartao{padding:24px;border:1px solid #e7dfef;border-radius:18px;background:#fff;box-shadow:0 8px 24px #35245f0b}
+        .icone-cartao{display:grid;place-items:center;width:48px;height:48px;margin-bottom:16px;border-radius:14px;background:#EAE4F5;color:#35245F;font-size:1.45rem}
+        .cartao h3{margin-bottom:9px;font-size:1.2rem}
+        .cartao p{line-height:1.75}
+        .cartao a{display:inline-block;margin-top:14px;font-weight:800;text-underline-offset:4px}
+        .passos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:passo}
+        .passo{padding:22px;border-radius:16px;background:#fff7d9;border:1px solid #f3e6ac}
+        .passo:before{counter-increment:passo;content:"0" counter(passo);display:block;margin-bottom:12px;color:#7b5b00;font-size:1.7rem;font-weight:800}
+        .passo h3{margin-bottom:8px}
+        .passo p{line-height:1.7}
+        .faixa{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:clamp(24px,5vw,42px);border-radius:22px;background:#EAE4F5;margin:12px 0 60px}
+        .faixa h2{margin-bottom:8px}
+        .faixa p{max-width:650px;line-height:1.75}
+        footer{margin-top:auto}
+        footer p{margin:8px 0}
+        footer a{margin:0 8px}
+        @media(max-width:800px){.grade,.passos{grid-template-columns:1fr 1fr}.faixa{align-items:flex-start;flex-direction:column}}
+        @media(max-width:560px){.grade,.passos{grid-template-columns:1fr}.hero-box:after{width:140px;height:140px;border-width:20px;right:-70px;top:-65px}.acoes{flex-direction:column}.acoes .botao-link{width:100%}.secao{padding:24px 0 36px}}
+    </style>
 </head>
 <body>
+    <a class="skip-link" href="#conteudo-principal">Pular para o conteúdo principal</a>
     <header>
-        <nav>
-            <a href="paginas/sobre o projeto.html"> Sobre o projeto </a>
+        <nav aria-label="Navegação principal">
+            <a href="index.html" aria-current="page">Início</a>
+            <a href="paginas/sobre o projeto.html">Sobre o projeto</a>
             <a href="paginas/cadastro.html">Cadastro</a>
-            <a href="paginas/adocao.html"> Adoção de Animais</a>
-            <a href="paginas/doacao.html"> Doação de Animais</a>
-            <a href="paginas/cadastro animal.html"> Cadastro de Animais</a>
-            <a href="paginas/fundo.html"> Doe para a causa</a>
-
-
-
-
-
+            <a href="paginas/adocao.html">Adoção de Animais</a>
+            <a href="paginas/doacao.html">Doação de Animais</a>
+            <a href="paginas/cadastro animal.html">Cadastro de Animais</a>
+            <a href="paginas/fundo.html">Doe para a causa</a>
         </nav>
     </header>
-        <main>
-            <section >
-            <h1 id="titulo">Espalhe amor:</h1>
-            <p> Adote ou doe um pet!</p>
-            </section>
 
-            <section>
-            <h2> O que é a COMPET?</h2>
-            <p>A COMPET é uma organização que busca promover uma melhor qualidade de vida para os animais.
-                Por isso, nós incentivamos a doação e adoção de pets.
-            </p>
-            <h2>Como funciona?</h2>
-            <p>
-                <ol>
-                <ul>1. Encontre um animal ou cadastre um para doação.</ul>
-                <ul>2. Entre em contato com a pessoa responsável. </ul>
-                <ul>3. Siga o processo de adoção responsável. </ul>
-                </ol>
-            </p>
-             </section>
-            <br>
-            <a class="botao-link" href="paginas/adocao.html">Quero adotar!</a>
-            <a class="botao-link secundario" href="paginas/doacao.html">Quero doar!</a>
-           
+    <main id="conteudo-principal">
+        <section class="hero home" aria-labelledby="titulo-principal">
+            <div class="hero-box">
+                <span class="eyebrow">Cuidado • Respeito • Novos começos</span>
+                <h1 id="titulo-principal">Um lar muda tudo. <span>Espalhe amor!</span></h1>
+                <p>Todo animal merece carinho, proteção e a chance de viver em um ambiente seguro. A COMPET aproxima pessoas que querem adotar, responsáveis que procuram um lar para um animal e quem deseja apoiar a causa animal.</p>
+                <div class="acoes">
+                    <a class="botao-link" href="paginas/adocao.html">Quero conhecer os animais</a>
+                    <a class="botao-link secundario" href="paginas/doacao.html">Quero ajudar um animal</a>
+                </div>
+                <p class="nota-hero">Adotar é um compromisso com uma vida — não apenas um gesto de um dia.</p>
+            </div>
+        </section>
 
+        <section class="secao home" aria-labelledby="sobre-compet">
+            <div class="cabecalho-secao">
+                <span class="mini">Conheça a COMPET</span>
+                <h2 id="sobre-compet">Conectando pessoas e animais</h2>
+                <p>A COMPET é um projeto voltado à divulgação da adoção e à conscientização sobre o cuidado responsável com os animais. Queremos facilitar o acesso às informações e incentivar atitudes baseadas em empatia, responsabilidade e respeito.</p>
+                <p>Encontrar um novo lar envolve mais do que escolher um animal: é importante pensar no tempo, no espaço, nos custos e nos cuidados que farão parte da rotina. Informação e planejamento ajudam a construir uma relação boa para todos.</p>
+            </div>
+            <div class="grade">
+                <article class="cartao">
+                    <div class="icone-cartao" aria-hidden="true">♡</div>
+                    <h3>Adoção responsável</h3>
+                    <p>Conheça os animais divulgados e pense com calma sobre qual deles combina com a sua rotina. Uma adoção consciente considera as necessidades do animal durante toda a vida.</p>
+                    <a href="paginas/adocao.html">Ver página de adoção →</a>
+                </article>
+                <article class="cartao">
+                    <div class="icone-cartao" aria-hidden="true">⌂</div>
+                    <h3>Divulgue um animal</h3>
+                    <p>Tem um animal que precisa encontrar uma família? O cadastro permite organizar informações importantes para apresentar sua história a possíveis adotantes.</p>
+                    <a href="paginas/cadastro animal.html">Cadastrar um animal →</a>
+                </article>
+                <article class="cartao">
+                    <div class="icone-cartao" aria-hidden="true">✦</div>
+                    <h3>Faça parte da comunidade</h3>
+                    <p>Você também pode conhecer o projeto, criar seu cadastro e descobrir maneiras de contribuir para a conscientização e o cuidado com os animais.</p>
+                    <a href="paginas/cadastro.html">Criar meu cadastro →</a>
+                </article>
+            </div>
+        </section>
 
+        <section class="secao home" aria-labelledby="como-funciona">
+            <div class="cabecalho-secao">
+                <span class="mini">Passo a passo</span>
+                <h2 id="como-funciona">Como funciona?</h2>
+                <p>Seja para adotar ou divulgar um animal, comece reunindo informações e seguindo cada etapa com atenção.</p>
+            </div>
+            <div class="passos">
+                <article class="passo">
+                    <h3>Explore e conheça</h3>
+                    <p>Visite a página de adoção ou confira as informações disponíveis. Procure entender a idade, o porte, o comportamento e as necessidades do animal.</p>
+                </article>
+                <article class="passo">
+                    <h3>Converse com responsabilidade</h3>
+                    <p>Entre em contato com a pessoa responsável, tire suas dúvidas e converse sobre saúde, rotina, adaptação e os cuidados necessários.</p>
+                </article>
+                <article class="passo">
+                    <h3>Planeje o novo começo</h3>
+                    <p>Prepare um ambiente seguro e organize alimentação, acompanhamento veterinário, tempo e recursos para cuidar do animal com carinho.</p>
+                </article>
+            </div>
+        </section>
 
+        <section class="home faixa" aria-labelledby="adocao-consciente">
+            <div>
+                <h2 id="adocao-consciente">Amor também é responsabilidade.</h2>
+                <p>Um animal precisa de atenção, segurança, alimentação, cuidados veterinários e paciência para se adaptar. Antes de adotar, avalie se você e sua casa estão preparados para esse compromisso.</p>
+            </div>
+            <a class="botao-link" href="paginas/sobre o projeto.html">Saiba mais sobre o projeto</a>
+        </section>
+    </main>
 
-
-
-
-
-
-
-
-
-
-        </main>
-        <footer>
-            <a href="paginas/sobre o projeto.html"> Sobre o projeto </a>
-             <a href="paginas/contato.html">Contatos</a>
-             <p>Site criado por Kaiky, Johann e Samara</p>
-        
-
-        </footer>
-    
+    <footer>
+        <p><strong>COMPET — cuidado e respeito pelos animais.</strong></p>
+        <p>
+            <a href="paginas/sobre o projeto.html">Sobre o projeto</a>
+            <a href="paginas/contato.html">Contatos</a>
+            <a href="paginas/fundo.html">Apoie a causa</a>
+        </p>
+        <p>Site criado por Kaiky, Johann e Samara.</p>
+    </footer>
 </body>
 </html>
