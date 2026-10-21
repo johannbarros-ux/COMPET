@@ -9,10 +9,7 @@
 
 .hero { padding: 70px 0; border-bottom: 1px solid var(--linha); }
 .hero-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 48px;
+    display: block;
 }
 .kicker {
     display: block;
@@ -46,62 +43,6 @@
 .cta:hover { opacity: .88; }
 .cta-light { background: transparent; color: var(--roxo); }
 .hero-note { margin-top: 18px; font-size: .9rem; font-weight: bold; }
-
-/* Ilustração feita com formas CSS, sem imagens */
-.sun-system {
-    position: relative;
-    display: grid;
-    place-items: center;
-    min-height: 360px;
-    overflow: hidden;
-    border: 2px solid var(--roxo);
-    border-radius: 48% 48% 4px 4px;
-    background: var(--lilas);
-}
-.sun-system::before, .sun-system::after {
-    position: absolute;
-    content: "";
-    border: 1px solid var(--roxo);
-    border-radius: 50%;
-}
-.sun-system::before { width: 230px; height: 230px; }
-.sun-system::after { width: 300px; height: 300px; }
-.orbit {
-    position: absolute;
-    width: 190px;
-    height: 190px;
-    border: 1px dashed var(--roxo);
-    border-radius: 50%;
-}
-.sun-disc {
-    z-index: 1;
-    display: grid;
-    place-items: center;
-    width: 140px;
-    height: 140px;
-    border: 2px solid var(--roxo);
-    border-radius: 50%;
-    background: var(--amarelo);
-    color: var(--roxo);
-    font-weight: bold;
-    line-height: 1.2;
-    text-align: center;
-    box-shadow: 7px 7px 0 var(--roxo);
-}
-.sun-disc span { display: block; font-size: 2rem; }
-.orbit-label {
-    position: absolute;
-    z-index: 2;
-    padding: 7px 10px;
-    border: 1px solid var(--roxo);
-    background: var(--creme);
-    color: var(--roxo);
-    font-size: .8rem;
-    font-weight: bold;
-}
-.label-one { top: 18%; left: 8%; }
-.label-two { right: 6%; bottom: 24%; }
-.label-three { left: 12%; bottom: 11%; background: var(--amarelo); }
 
 /* Seções da página inicial */
 .section { padding: 70px 0; }
@@ -191,9 +132,8 @@
 
 /* Ajustes para celular */
 @media (max-width: 800px) {
-    .hero-layout, .care-layout { grid-template-columns: 1fr; }
+    .care-layout { grid-template-columns: 1fr; }
     .section-heading { grid-template-columns: 1fr; gap: 12px; }
-    .sun-system { min-height: 300px; }
     .join-inner { align-items: flex-start; flex-direction: column; }
 }
 @media (max-width: 560px) {
