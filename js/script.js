@@ -74,7 +74,8 @@ const animaisExemplo = [
 function carregarLista(chave) {
     try {
         const dados = localStorage.getItem(chave);
-        return dados ? JSON.parse(dados) : [];
+        const lista = dados ? JSON.parse(dados) : [];
+        return Array.isArray(lista) ? lista : [];
     } catch (erro) {
         return [];
     }
