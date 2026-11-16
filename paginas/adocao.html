@@ -75,18 +75,66 @@
             <section class="sp-section sp-wrap">
                 <div class="sp-heading">
                     <div class="sp-index">
-                        <span>
-                            02
-                        </span>
+                        <span>02</span>
+                        Animais disponíveis
+                    </div>
+                    <div>
+                        <h2>Conheça quem está procurando um lar.</h2>
+                        <p>Use a busca e os filtros para encontrar animais por nome, espécie, porte ou sexo. Os primeiros anúncios são exemplos demonstrativos; cadastros feitos neste navegador também aparecem aqui.</p>
+                    </div>
+                </div>
+                <div class="adocao-listagem">
+                    <div class="adocao-filtros" aria-label="Filtros de animais">
+                        <div class="campo">
+                            <label for="buscaAnimal">Buscar por nome</label>
+                            <input type="search" id="buscaAnimal" placeholder="Digite o nome do animal">
+                        </div>
+                        <div class="campo">
+                            <label for="filtroEspecie">Espécie</label>
+                            <select id="filtroEspecie">
+                                <option value="">Todas</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="gato">Gato</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="filtroPorte">Porte</label>
+                            <select id="filtroPorte">
+                                <option value="">Todos</option>
+                                <option value="pequeno">Pequeno</option>
+                                <option value="medio">Médio</option>
+                                <option value="grande">Grande</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <label for="filtroSexo">Sexo</label>
+                            <select id="filtroSexo">
+                                <option value="">Todos</option>
+                                <option value="macho">Macho</option>
+                                <option value="femea">Fêmea</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="filtros-acoes">
+                        <label class="favoritos-filtro" for="somenteFavoritos">
+                            <input type="checkbox" id="somenteFavoritos">
+                            Mostrar apenas favoritos
+                        </label>
+                        <button class="botao secundario" type="button" id="limparFiltros">Limpar filtros</button>
+                        <span id="quantidadeAnimais" aria-live="polite"></span>
+                    </div>
+                    <p id="mensagemLista" class="mensagem-lista" role="status" aria-live="polite"></p>
+                    <div id="listaAnimais" class="lista-animais"></div>
+                </div>
+                <div class="sp-heading" style="margin-top: 48px;">
+                    <div class="sp-index">
+                        <span>03</span>
                         Antes de adotar
                     </div>
                     <div>
-                        <h2>
-                            O vínculo começa antes de levar para casa.
-                        </h2>
-                        <p>
-                            A listagem de animais ainda não está publicada nesta versão. Enquanto a área de divulgação não estiver conectada, use estas orientações para se preparar e procure organizações de proteção animal confiáveis na sua região.
-                        </p>
+                        <h2>O vínculo começa antes de levar para casa.</h2>
+                        <p>Conheça a história, converse com o responsável e prepare um ambiente seguro antes de tomar sua decisão.</p>
                     </div>
                 </div>
                 <div class="sp-grid">
@@ -188,5 +236,6 @@
                 </div>
             </div>
         </footer>
+            <script src="../js/script.js"></script>
     </body>
 </html>
