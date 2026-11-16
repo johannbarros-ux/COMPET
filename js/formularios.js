@@ -108,9 +108,9 @@ if (formularioAnimal) {
 
         try {
             localStorage.setItem("compet_animais", JSON.stringify(animais));
+            formularioAnimal.reset();
             mensagem.className = "mensagem-formulario mensagem-sucesso";
             mensagem.textContent = "Animal cadastrado neste navegador! Ele já pode aparecer na página de adoção deste mesmo navegador. A foto não foi armazenada e os dados ainda não foram enviados a um servidor.";
-            formularioAnimal.reset();
         } catch (erro) {
             mensagem.className = "mensagem-formulario mensagem-erro";
             mensagem.textContent = "Não foi possível salvar. O armazenamento do navegador pode estar cheio ou desativado.";
