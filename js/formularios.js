@@ -21,7 +21,13 @@ if (formularioCadastro) {
         mensagem.textContent = "";
         confirmarSenha.removeAttribute("aria-invalid");
 
-        if (nascimento.value > new Date().toISOString().split("T")[0]) {
+        const hoje = new Date();
+        const ano = hoje.getFullYear();
+        const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+        const dia = String(hoje.getDate()).padStart(2, "0");
+        const dataLocal = ano + "-" + mes + "-" + dia;
+
+        if (nascimento.value > dataLocal) {
             mensagem.classList.add("mensagem-erro");
             mensagem.textContent = "A data de nascimento não pode estar no futuro.";
             nascimento.setAttribute("aria-invalid", "true");
@@ -37,6 +43,7 @@ if (formularioCadastro) {
             return;
         }
 
+        nascimento.removeAttribute("aria-invalid");
         mensagem.classList.add("mensagem-sucesso");
         mensagem.textContent = "Os campos foram validados. O cadastro de usuário ainda não é enviado nem armazenado: essa etapa será feita com o back-end.";
     });
@@ -89,7 +96,8 @@ if (formularioAnimal) {
 
         try {
             const dadosSalvos = localStorage.getItem("compet_animais");
-            animais = dadosSalvos ? JSON.parse(dadosSalvos) : [];
+            const listaSalva = dadosSalvos ? JSON.parse(dadosSalvos) : [];
+            animais = Array.isArray(listaSalva) ? listaSalva : [];
         } catch (erro) {
             mensagem.className = "mensagem-formulario mensagem-erro";
             mensagem.textContent = "Não foi possível ler os cadastros salvos neste navegador.";
