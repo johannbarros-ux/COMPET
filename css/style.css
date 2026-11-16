@@ -462,3 +462,5 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     .adocao-filtros, .lista-animais, .animal-detalhes { grid-template-columns: 1fr; }
     .animal-card { padding: 18px; }
 }
+
+.adocao-subheading { margin-top: 48px; }
