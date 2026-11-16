@@ -1,5 +1,5 @@
-// Validação dos formulários COMPET.
-// Os dados ainda não são enviados para um servidor.
+// Validação e interação dos formulários COMPET.
+// O cadastro de animais fica salvo apenas neste navegador, até a integração com o back-end.
 
 const formularioCadastro = document.getElementById("formCadastro");
 
@@ -14,11 +14,20 @@ if (formularioCadastro) {
 
         const senha = document.getElementById("senha");
         const confirmarSenha = document.getElementById("confirmar");
+        const nascimento = document.getElementById("nascimento");
         const mensagem = document.getElementById("mensagemCadastro");
 
         mensagem.className = "mensagem-formulario";
         mensagem.textContent = "";
         confirmarSenha.removeAttribute("aria-invalid");
+
+        if (nascimento.value > new Date().toISOString().split("T")[0]) {
+            mensagem.classList.add("mensagem-erro");
+            mensagem.textContent = "A data de nascimento não pode estar no futuro.";
+            nascimento.setAttribute("aria-invalid", "true");
+            nascimento.focus();
+            return;
+        }
 
         if (senha.value !== confirmarSenha.value) {
             mensagem.classList.add("mensagem-erro");
@@ -29,7 +38,13 @@ if (formularioCadastro) {
         }
 
         mensagem.classList.add("mensagem-sucesso");
-        mensagem.textContent = "Os campos foram validados. O cadastro ainda não é enviado nem salvo porque falta a integração com o back-end.";
+        mensagem.textContent = "Os campos foram validados. O cadastro de usuário ainda não é enviado nem armazenado: essa etapa será feita com o back-end.";
+    });
+
+    formularioCadastro.addEventListener("reset", function () {
+        const mensagem = document.getElementById("mensagemCadastro");
+        mensagem.className = "mensagem-formulario";
+        mensagem.textContent = "";
     });
 }
 
@@ -45,7 +60,58 @@ if (formularioAnimal) {
         }
 
         const mensagem = document.getElementById("mensagemAnimal");
-        mensagem.className = "mensagem-formulario mensagem-sucesso";
-        mensagem.textContent = "Os campos foram validados. O cadastro ainda não é enviado nem salvo porque falta a integração com o back-end.";
+        const campos = new FormData(formularioAnimal);
+        const animal = {
+            id: "animal-" + Date.now(),
+            nome: campos.get("nome_animal").trim(),
+            especie: campos.get("especie"),
+            sexo: campos.get("sexo"),
+            idade: campos.get("idade").trim(),
+            porte: campos.get("porte"),
+            castrado: campos.get("castrado"),
+            vacinado: campos.get("vacinado"),
+            temperamento: campos.get("temperamento"),
+            descricao: campos.get("descricao").trim(),
+            responsavel: campos.get("responsavel").trim(),
+            contato: campos.get("contato").trim(),
+            cidade: campos.get("cidade").trim(),
+            estado: campos.get("estado")
+        };
+
+        if (animal.nome === "" || animal.idade === "" || animal.descricao === "" ||
+            animal.responsavel === "" || animal.contato === "" || animal.cidade === "") {
+            mensagem.className = "mensagem-formulario mensagem-erro";
+            mensagem.textContent = "Preencha os campos obrigatórios sem deixar apenas espaços.";
+            return;
+        }
+
+        let animais = [];
+
+        try {
+            const dadosSalvos = localStorage.getItem("compet_animais");
+            animais = dadosSalvos ? JSON.parse(dadosSalvos) : [];
+        } catch (erro) {
+            mensagem.className = "mensagem-formulario mensagem-erro";
+            mensagem.textContent = "Não foi possível ler os cadastros salvos neste navegador.";
+            return;
+        }
+
+        animais.push(animal);
+
+        try {
+            localStorage.setItem("compet_animais", JSON.stringify(animais));
+            mensagem.className = "mensagem-formulario mensagem-sucesso";
+            mensagem.textContent = "Animal cadastrado neste navegador! Ele já pode aparecer na página de adoção deste mesmo navegador. A foto não foi armazenada e os dados ainda não foram enviados a um servidor.";
+            formularioAnimal.reset();
+        } catch (erro) {
+            mensagem.className = "mensagem-formulario mensagem-erro";
+            mensagem.textContent = "Não foi possível salvar. O armazenamento do navegador pode estar cheio ou desativado.";
+        }
+    });
+
+    formularioAnimal.addEventListener("reset", function () {
+        const mensagem = document.getElementById("mensagemAnimal");
+        mensagem.className = "mensagem-formulario";
+        mensagem.textContent = "";
     });
 }
