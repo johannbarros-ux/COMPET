@@ -339,3 +339,126 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     .sp-button, .botao { text-align: center; }
     .sp-form .largo { grid-column: auto; }
 }
+
+
+/* 7. Listagem dinâmica de animais */
+.adocao-listagem {
+    padding: 12px 0 58px;
+}
+.adocao-filtros {
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    gap: 14px;
+    align-items: end;
+    margin: 24px 0 16px;
+    padding: 22px;
+    background: var(--lilas);
+    border: 1px solid var(--roxo);
+}
+.adocao-filtros .campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.adocao-filtros label {
+    color: var(--roxo);
+    font-weight: bold;
+}
+.adocao-filtros input,
+.adocao-filtros select {
+    width: 100%;
+    min-height: 44px;
+    padding: 9px;
+    border: 1px solid #aaa1bd;
+    background: #fffef8;
+    color: var(--texto);
+    font: inherit;
+}
+.filtros-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 14px 0 24px;
+}
+.favoritos-filtro {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--roxo);
+    font-weight: bold;
+}
+.favoritos-filtro input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--roxo);
+}
+#quantidadeAnimais {
+    color: var(--roxo);
+    font-weight: bold;
+}
+.lista-animais {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+.animal-card {
+    min-width: 0;
+    padding: 22px;
+    background: #fff;
+    border: 1px solid var(--linha);
+    border-top: 4px solid var(--roxo);
+}
+.animal-card-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+.animal-etiqueta {
+    padding: 4px 9px;
+    background: var(--amarelo);
+    color: var(--roxo);
+    font-size: .85rem;
+    font-weight: bold;
+}
+.animal-favorito {
+    padding: 6px 10px;
+    border: 1px solid var(--roxo);
+    background: transparent;
+    color: var(--roxo);
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+.animal-favorito[aria-pressed="true"] {
+    background: var(--roxo);
+    color: white;
+}
+.animal-nome { margin-bottom: 8px; font-size: 1.6rem; }
+.animal-resumo { margin-bottom: 14px; }
+.animal-detalhes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+    margin: 0 0 16px;
+    padding-left: 18px;
+}
+.animal-responsavel, .animal-contato {
+    margin-bottom: 4px;
+    font-size: .92rem;
+}
+.mensagem-lista {
+    margin: 16px 0;
+    color: var(--roxo);
+    font-weight: bold;
+}
+@media (max-width: 750px) {
+    .adocao-filtros { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+    .adocao-filtros, .lista-animais, .animal-detalhes { grid-template-columns: 1fr; }
+    .animal-card { padding: 18px; }
+}
